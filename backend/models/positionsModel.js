@@ -8,4 +8,4 @@ const positionSchema = new Schema(
   },
   { timestamps: true }
 );
-module.exports = mongoose.model("Position", positionSchema);
+module.exports = mongoose.model("Positions", positionSchema);
