@@ -5,11 +5,13 @@ interface InputProps {
     value?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     type?: string;
+    maxLength?:number;
+    pattern?:string;
     required?: boolean;
 }
 
 export const InputField = (props: InputProps) => {
-    const { label, placeholder, type, value, onChange, required } = props;
+    const { label, placeholder, type, value, onChange, required,maxLength,pattern } = props;
     return (
         <Form style={{width:"100%"}}>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -18,8 +20,10 @@ export const InputField = (props: InputProps) => {
                     type={type} 
                     placeholder={placeholder}
                     value={value}
+                    maxLength={maxLength}
                     onChange={onChange}
                     required={required}
+                    pattern={pattern}
                 />
             </Form.Group>
         </Form>

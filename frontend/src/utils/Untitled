@@ -1,0 +1,29 @@
+import axios from "axios";
+
+const API_URL = "http://localhost:5000/api/users";
+
+// ===== EMPLOYEE =====
+export const getAllEmployee = (page = 1, limit = 10) =>
+  axios.get(`${API_URL}/employee?page=${page}&limit=${limit}`);
+
+export const getEmployeeById = (id: string) =>
+  axios.get(`${API_URL}/employee/${id}`);
+
+export const createEmployee = (data: any) =>
+  axios.post(`${API_URL}/employee`, data);
+
+export const updateEmployee = (id: string, data: any) =>
+  axios.put(`${API_URL}/employee/${id}`, data);
+
+export const deleteEmployee = (id: string) =>
+  axios.delete(`${API_URL}/employee/${id}`);
+
+// ===== CUSTOMER =====
+export const createCustomer = (data: any) =>
+  axios.post(`${API_URL}/customer`, data);
+
+export const getCustomerById = (id: string) =>
+  axios.get(`${API_URL}/customer/${id}`);
+
+export const updateCustomer = (id: string, data: any) =>
+  axios.put(`${API_URL}/customer/${id}`, data);
